@@ -2,7 +2,6 @@ package com.example.dictionary.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -15,16 +14,14 @@ import android.widget.Toast;
 
 import com.example.dictionary.Object.Question;
 import com.example.dictionary.R;
-import com.example.dictionary.database.QuizDatabaseHelper;
+import com.example.dictionary.database.QuizEasyDatabaseHelper;
 
 import java.util.Collections;
 import java.util.List;
 
-public class QuizQuestionsActivity extends AppCompatActivity {
+public class QuizEasyQuestionsActivity extends AppCompatActivity {
 
-    public static final String SCORE_RETURN = "Score return";
-
-
+//    public static final String SCORE_RETURN = "Score return";
 
     private TextView questionTextView;
     private TextView scoreTextView;
@@ -62,7 +59,7 @@ public class QuizQuestionsActivity extends AppCompatActivity {
 
         textColorDefaultRb = rb1.getTextColors();
 
-        QuizDatabaseHelper dbHelper = new QuizDatabaseHelper(this);
+        QuizEasyDatabaseHelper dbHelper = new QuizEasyDatabaseHelper(this);
         questionList = dbHelper.getAllQuestions();
         questionCountTotal = questionList.size();
         Collections.shuffle(questionList);
@@ -150,10 +147,7 @@ public class QuizQuestionsActivity extends AppCompatActivity {
     }
 
     private void finishQuiz() {
-        //returning score result to Quiz menu screen.
-        Intent resultIntent = new Intent();
-        resultIntent.putExtra(SCORE_RETURN, score);
-        setResult(RESULT_OK);
+
         finish();
     }
 }

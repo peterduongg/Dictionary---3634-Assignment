@@ -10,7 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".Activities.QuizMenuActivity"></activity>
-        <activity android:name=".Activities.QuizQuestionsActivity"></activity>
+        <activity android:name=".Activities.QuizEasyQuestionsActivity"></activity>
+        <activity android:name=".Activities.QuizMediumQuestionsActivity"></activity>
+        <activity android:name=".Activities.QuizHardQuestionsActivity"></activity>
         <activity android:name=".Activities.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

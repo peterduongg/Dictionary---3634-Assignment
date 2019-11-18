@@ -15,16 +15,16 @@ import androidx.annotation.Nullable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class QuizDatabaseHelper extends SQLiteOpenHelper {
+public class QuizHardDatabaseHelper extends SQLiteOpenHelper {
 
     //database that will contain the quiz
-    private static final String DATABASE_NAME = "MediumQuizNEW.db";
+    private static final String DATABASE_NAME = "HardQuiz.db";
     //defining the version of the database
     private static final int DATABASE_VERSION = 1;
 
     private SQLiteDatabase db;
 
-    public QuizDatabaseHelper(@Nullable Context context) {
+    public QuizHardDatabaseHelper(@Nullable Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 
@@ -62,16 +62,26 @@ public class QuizDatabaseHelper extends SQLiteOpenHelper {
 
     //Defining the correct answer for the questions
     private void fillQuestionTable(){
-        Question q1 = new Question("Define the word esophagus (A Correct)", "A", "B", "C", 1);
+        Question q1 = new Question("Define the word HARD WORD (A Correct)", "A", "B", "C", 1);
         addQuestion(q1);
-        Question q2 = new Question("Define the word esophagus (B Correct)", "A", "B", "C", 2);
+        Question q2 = new Question("Define the word HARD WORD (B Correct)", "A", "B", "C", 2);
         addQuestion(q2);
-        Question q3 = new Question("Define the word esophagus (C Correct)", "A", "B", "C", 3);
+        Question q3 = new Question("Define the word HARD WORD (C Correct)", "A", "B", "C", 3);
         addQuestion(q3);
-        Question q4 = new Question("Define the word esophagus (B Correct)", "A", "B", "C", 2);
+        Question q4 = new Question("Define the word HARD WORD (B Correct)", "A", "B", "C", 2);
         addQuestion(q4);
-        Question q5 = new Question("Define the word esophagus (A Correct)", "A", "B", "C", 1);
+        Question q5 = new Question("Define the word HARD WORD (A Correct)", "A", "B", "C", 1);
         addQuestion(q5);
+        Question q6 = new Question("Define the word HARD WORD (A Correct)", "A", "B", "C", 1);
+        addQuestion(q6);
+        Question q7 = new Question("Define the word HARD WORD (B Correct)", "A", "B", "C", 2);
+        addQuestion(q7);
+        Question q8 = new Question("Define the word HARD WORD (C Correct)", "A", "B", "C", 3);
+        addQuestion(q8);
+        Question q9 = new Question("Define the word HARD WORD (B Correct)", "A", "B", "C", 2);
+        addQuestion(q9);
+        Question q10 = new Question("Define the word HARD WORD (A Correct)", "A", "B", "C", 1);
+        addQuestion(q10);
     }
 
     //
