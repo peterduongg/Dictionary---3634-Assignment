@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".QuizQuestions">
+    android:background="@color/colorPink"
+    tools:context=".Activities.QuizQuestionsActivity">
 
     <TextView
         android:id="@+id/score_TextView"
@@ -15,6 +16,7 @@
         android:layout_marginTop="20dp"
         android:text="Score:"
         android:textColor="@android:color/black"
+        android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -27,6 +29,7 @@
         android:layout_marginTop="20dp"
         android:text="Question: 1/x"
         android:textColor="@android:color/black"
+        android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/score_TextView" />
 

@@ -11,13 +11,13 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import com.example.dictionary.Activities.QuizQuestions;
+import com.example.dictionary.Activities.QuizMenuActivity;
 import com.example.dictionary.R;
 
-public class QuizMenuFragment extends Fragment {
-    Button buttonStartMediumQuiz;
+public class QuizWarningFragment extends Fragment {
+    Button continueButton;
 
-    public QuizMenuFragment(){
+    public QuizWarningFragment(){
         //empty constructor to refer to
     }
 
@@ -26,20 +26,21 @@ public class QuizMenuFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
 
-        final View view = inflater.inflate(R.layout.fragment_quiz_menu, container, false);
+        final View view = inflater.inflate(R.layout.quiz_warning_fragment, container, false);
 
-        buttonStartMediumQuiz = view.findViewById(R.id.mediumQuizButton);
+        continueButton = view.findViewById(R.id.buttonContinue);
 
-        buttonStartMediumQuiz.setOnClickListener(new View.OnClickListener() {
+        continueButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startQuiz(view);
+                startQuizMenu(view);
             }
         });
         return view;
     }
-    private void startQuiz(View view){
-        Intent intent = new Intent(view.getContext(), QuizQuestions.class);
+    private void startQuizMenu(View view){
+        Intent intent = new Intent(view.getContext(), QuizMenuActivity.class);
         startActivity(intent);
     }
+
 }

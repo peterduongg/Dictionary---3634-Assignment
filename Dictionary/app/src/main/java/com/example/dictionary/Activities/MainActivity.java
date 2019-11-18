@@ -9,7 +9,7 @@ import androidx.fragment.app.FragmentTransaction;
 import android.os.Bundle;
 import android.view.MenuItem;
 
-import com.example.dictionary.Fragments.QuizMenuFragment;
+import com.example.dictionary.Fragments.QuizWarningFragment;
 import com.example.dictionary.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Fragment fragment = new QuizMenuFragment();
+        Fragment fragment = new QuizWarningFragment();
         swapFragment(fragment);
         //setting button navigation bar
         bottomNavigationView = findViewById(R.id.nav_view);
@@ -33,18 +33,18 @@ public class MainActivity extends AppCompatActivity{
                 //if clicked on Dictionary bar change to it
                 if (menuItem.getItemId() == R.id.nav_Dictionary) {
                     //change below to your fragment
-                    Fragment fragment = new QuizMenuFragment();
+                    Fragment fragment = new QuizWarningFragment();
                     swapFragment(fragment);
                     return true;
                     //if clicked on video bar change to it
                 } else if (menuItem.getItemId() == R.id.nav_Videos) {
                     //change below to your fragment
-                    Fragment fragment = new QuizMenuFragment();
+                    Fragment fragment = new QuizWarningFragment();
                     swapFragment(fragment);
                     return true;
                     //if clicked on quiz bar change to it
                 } else if (menuItem.getItemId() == R.id.nav_Quiz) {
-                    Fragment fragment = new QuizMenuFragment();
+                    Fragment fragment = new QuizWarningFragment();
                     swapFragment(fragment);
                     return true;
                 } else
