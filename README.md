@@ -4,14 +4,21 @@ Commit 4 - (read description)
 
 NOW INCLUDES:
 
-DICTIONARY
+DICTIONARY 
+
 Dictionary menu fragment
+
 Dictionary activity
+
 Small user-response changes to help indicate that the app is loading
+
 Appearance overhaul for dictionary section
 
+
 QUIZ
+
 Datbase now filled with relevant quiz data and difficulty
+
 small appearance changes
 
 
