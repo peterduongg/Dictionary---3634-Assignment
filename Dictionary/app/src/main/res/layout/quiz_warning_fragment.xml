@@ -7,11 +7,23 @@
     android:background="@color/colorPink"
     android:orientation="vertical">
 
+    <ImageView
+        android:id="@+id/warningImageView"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginTop="100dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_warning"
+        tools:ignore="VectorDrawableCompat" />
+
     <TextView
         android:id="@+id/textWarning"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="20dp"
         android:text="Warning"
         android:textColor="#FF0000"
         android:textSize="30dp"
@@ -19,33 +31,21 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/warningImageView" />
 
     <TextView
         android:id="@+id/textWarningDesc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:text="Once you start a quiz, you won't "
+        android:layout_marginTop="20dp"
+        android:text="Once you start a quiz, you won't\nhave direct access to the dictionary"
+        android:textAlignment="center"
         android:textColor="@android:color/black"
         android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textWarning" />
-
-    <TextView
-        android:id="@+id/textWarningDesc2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:text="have access to the dictionary"
-        android:textColor="@android:color/black"
-        android:textSize="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textWarningDesc" />
 
 
     <Button
@@ -58,5 +58,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textWarningDesc2" />
+        app:layout_constraintTop_toBottomOf="@+id/textWarningDesc" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

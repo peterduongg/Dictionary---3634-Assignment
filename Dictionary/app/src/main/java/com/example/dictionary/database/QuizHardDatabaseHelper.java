@@ -20,7 +20,7 @@ public class QuizHardDatabaseHelper extends SQLiteOpenHelper {
     //database that will contain the quiz
     private static final String DATABASE_NAME = "HardQuiz.db";
     //defining the version of the database
-    private static final int DATABASE_VERSION = 1;
+    private static final int DATABASE_VERSION = 2;
 
     private SQLiteDatabase db;
 
@@ -62,25 +62,74 @@ public class QuizHardDatabaseHelper extends SQLiteOpenHelper {
 
     //Defining the correct answer for the questions
     private void fillQuestionTable(){
-        Question q1 = new Question("Define the word HARD WORD (A Correct)", "A", "B", "C", 1);
+        Question q1 = new Question(
+                "Define the word gemmology",
+                "the study of precious stones",
+                "a religious system based on getting knowledge of yourself and spiritual fulfilment through courses of study and training",
+                "a tropical fruit with smooth yellow or red skin, soft orange flesh and a large seed inside",
+                1);
         addQuestion(q1);
-        Question q2 = new Question("Define the word HARD WORD (B Correct)", "A", "B", "C", 2);
+        Question q2 = new Question("Define the word Anaesthesia ",
+                "lack of feeling within a body part",
+                "insensitivity to pain, especially as of gases or the injection of drugs before surgical operations",
+                "the part of the brain controlling the eyes, nose, mouth and brain",
+                2);
         addQuestion(q2);
-        Question q3 = new Question("Define the word HARD WORD (C Correct)", "A", "B", "C", 3);
+        Question q3 = new Question(
+                "Define the word Bibulous",
+                " connected with religion or with a particular religion",
+                "to help or encourage somebody/something by saying or showing that you agree with them/it",
+                "liking to drink too much alcohol",
+                3);
         addQuestion(q3);
-        Question q4 = new Question("Define the word HARD WORD (B Correct)", "A", "B", "C", 2);
+        Question q4 = new Question(
+                "Define the word Malapropism",
+                "the part of the body on top of the neck containing the eyes, nose, mouth and brain",
+                "an amusing mistake somebody makes when they use a word which sounds similar to the word they wanted to use, but means something different",
+                "tending to find and call attention to faults",
+                2);
         addQuestion(q4);
-        Question q5 = new Question("Define the word HARD WORD (A Correct)", "A", "B", "C", 1);
+        Question q5 = new Question(
+                "Define the word Tricorn",
+                "cocked hat with the brim turned up to form three points",
+                "a large dinosaur with two large horns and one small horn on its very large head",
+                "the hard material that the trunk and branches of a tree are made of; this material when it is used to build or make things with, or as a fuel",
+                1);
         addQuestion(q5);
-        Question q6 = new Question("Define the word HARD WORD (A Correct)", "A", "B", "C", 1);
+        Question q6 = new Question(
+                "Define the word Tenebrous",
+                "dark; shadowy or obscure",
+                "willing to do things which are difficult, dangerous or painful; not afraid",
+                "not large in size, number, degree, amount, etc.",
+                1);
         addQuestion(q6);
-        Question q7 = new Question("Define the word HARD WORD (B Correct)", "A", "B", "C", 2);
+        Question q7 = new Question(
+                "Define the word Bruit",
+                "having a lot of physical power so that you can lift heavy weights, do hard physical work, etc.",
+                "to spread a piece of news widely",
+                "an organized set of ideas or theories or a particular way of doing something",
+                2);
         addQuestion(q7);
-        Question q8 = new Question("Define the word HARD WORD (C Correct)", "A", "B", "C", 3);
+        Question q8 = new Question(
+                "Define the word Pother",
+                "a series of movements and steps that are usually performed to music; a particular example of these movements and steps",
+                "situation in which there is an angry disagreement between people or groups who have different opinions",
+                "a commotion or fuss",
+                3);
         addQuestion(q8);
-        Question q9 = new Question("Define the word HARD WORD (B Correct)", "A", "B", "C", 2);
+        Question q9 = new Question(
+                "Define the word Cantle",
+                "a leather seat for a rider on a horse",
+                "a lack of agreement between facts, opinions, actions, etc.",
+                "the raised curved part of the back of a horse's saddle",
+                2);
         addQuestion(q9);
-        Question q10 = new Question("Define the word HARD WORD (A Correct)", "A", "B", "C", 1);
+        Question q10 = new Question(
+                "Define the word Regnant",
+                "having a baby or young animal developing inside her/its body",
+                "exercising power or authority",
+                "a series of names, items, figures, etc., especially when they are written or printed",
+                1);
         addQuestion(q10);
     }
 

@@ -23,12 +23,13 @@
         android:id="@+id/question_CountTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginLeft="20dp"
         android:layout_marginTop="20dp"
         android:text="Question: 1/x"
         android:textColor="@android:color/black"
-        android:textSize="20sp"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/score_TextView" />
 
@@ -41,36 +42,43 @@
         android:textAlignment="center"
         android:textColor="@android:color/black"
         android:textSize="20sp"
+        android:textStyle="italic"
         app:layout_constraintBottom_toTopOf="@+id/radio_Group"
         app:layout_constraintStart_toStartOf="parent" />
 
     <RadioGroup
         android:id="@+id/radio_Group"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
-        android:layout_marginLeft="50dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginLeft="25dp"
+        android:paddingRight="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <RadioButton
             android:id="@+id/radio_Button1"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Option:"/>
+            android:layout_marginBottom="5dp"
+            android:text="Option:"
+            android:textSize="16sp" />
 
         <RadioButton
             android:id="@+id/radio_Button2"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Option:"/>
+            android:layout_marginBottom="5dp"
+            android:text="Option:"
+            android:textSize="16sp" />
 
         <RadioButton
             android:id="@+id/radio_Button3"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Option:"/>
+            android:text="Option:"
+            android:textSize="16sp" />
 
     </RadioGroup>
 

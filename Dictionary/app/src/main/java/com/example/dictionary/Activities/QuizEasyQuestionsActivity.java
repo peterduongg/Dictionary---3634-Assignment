@@ -39,7 +39,7 @@ public class QuizEasyQuestionsActivity extends AppCompatActivity {
     private Question currentQuestion;
 
     private ColorStateList textColorDefaultRb;
-    private int score;
+    private int score = 0;
     private boolean answered;
 
     @Override
