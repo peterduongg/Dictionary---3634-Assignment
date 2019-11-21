@@ -1,5 +1,8 @@
 package com.example.dictionary.database;
 
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 import java.util.Random;
 
 public class WordGeneratorDatabase {
@@ -52,6 +55,7 @@ public class WordGeneratorDatabase {
                 "Wanton",
                 "Yoke",
                 "Zephyr"};
+
         Random random = new Random();
         int i = random.nextInt(randomwords.length);
         return randomwords[i];

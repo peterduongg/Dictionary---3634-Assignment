@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -52,6 +53,14 @@ public class DictionaryAdapter extends RecyclerView.Adapter<DictionaryAdapter.Hi
         final History dictionaryAtPosition = dictionaryToAdapt.get(position);
         holder.historyWord.setText(dictionaryAtPosition.getWord());
 
+        holder.clearButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                database.historyDao().delete(dictionaryAtPosition);
+                Toast.makeText(v.getContext(), "History entry removed", Toast.LENGTH_SHORT).show();
+            }
+        });
+
     }
 
     @Override
@@ -61,15 +70,16 @@ public class DictionaryAdapter extends RecyclerView.Adapter<DictionaryAdapter.Hi
 
     public static class HistoryViewHolder extends RecyclerView.ViewHolder {
         public View view;
-//        public Button searchButton;
         public TextView historyWord;
+        Button clearButton;
 
 
         public HistoryViewHolder(View v) {
             super(v);
             view = v;
-//            searchButton = v.findViewById(R.id.searchButtonXML);
             historyWord = v.findViewById(R.id.historyWordTextView);
+            clearButton = v.findViewById(R.id.removeButton);
+
         }
 
     }

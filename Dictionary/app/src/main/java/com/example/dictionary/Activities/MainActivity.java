@@ -11,6 +11,7 @@ import android.view.MenuItem;
 
 import com.example.dictionary.Fragments.DictionaryMenuFragment;
 import com.example.dictionary.Fragments.QuizWarningFragment;
+import com.example.dictionary.Fragments.YouTubeVideoFragment;
 import com.example.dictionary.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -40,7 +41,7 @@ public class MainActivity extends AppCompatActivity{
                     //if clicked on video bar change to it
                 } else if (menuItem.getItemId() == R.id.nav_Videos) {
                     //change below to your fragment
-                    Fragment fragment = new QuizWarningFragment();
+                    Fragment fragment = new YouTubeVideoFragment();
                     swapFragment(fragment);
                     return true;
                     //if clicked on quiz bar change to it

@@ -15,7 +15,8 @@ import com.example.dictionary.database.HistoryAppDatabase;
 
 public class DictionaryHistory extends AppCompatActivity {
     public RecyclerView historyRV;
-    Button clearDatabase;
+    HistoryAppDatabase historyAppDatabase;
+//    Button clearDatabase;
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,7 +24,8 @@ public class DictionaryHistory extends AppCompatActivity {
         historyRV = findViewById(R.id.dictionaryHistory_rv);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         historyRV.setLayoutManager(layoutManager);
-//        clearDatabase = findViewById(R.id.buttonClearHistory);
+        historyAppDatabase = historyAppDatabase.getInstance(this);
+        //clearDatabase = findViewById(R.id.buttonClearHistory);
 
 
 
@@ -33,12 +35,7 @@ public class DictionaryHistory extends AppCompatActivity {
         dictionaryAdapter.setData(db.historyDao().getAllHistory());
         historyRV.setAdapter(dictionaryAdapter);
 
-//        clearDatabase.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                db.execSQL("DROP TABLE IF EXISTS")
-//            }
-//        });
+
 
     }
 }
