@@ -29,6 +29,10 @@ public interface HistoryDao {
     @Query("SELECT * FROM History")
     public List<History> getAllHistory();
 
+//    @Query ("SELECT * FROM History limit 1")
+//    public History selectDelete();
+
+
 
 //    @Query("SELECT COUNT(word) FROM History WHERE word = :word")
 //    public History getHistory (String word);

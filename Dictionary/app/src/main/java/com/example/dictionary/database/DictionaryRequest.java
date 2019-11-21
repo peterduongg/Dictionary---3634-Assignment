@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 import com.example.dictionary.Activities.Dictionary;
 import com.example.dictionary.DictionaryAdapter;
+import com.example.dictionary.Object.HistoryDao;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -93,7 +94,8 @@ public class DictionaryRequest extends AsyncTask <String, Integer, String> {
         } catch (JSONException e) {
             definitionTextView.setText("*No Definition Found*");
             Toast.makeText(context, "There is no definition", Toast.LENGTH_SHORT).show();
-            int deleteItemNumber = dictionaryAdapter.getItemCount();
+//            historyAppDatabase.historyDao().delete();
+            //int deleteItemNumber = dictionaryAdapter.getItemCount();
         }
         Log.v("Result of Dictionary", "onPostExecute" + result);
 

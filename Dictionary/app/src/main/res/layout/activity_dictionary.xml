@@ -2,23 +2,37 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPink"
+    android:orientation="vertical"
     android:padding="16dp">
+
+    <TextView
+        android:id="@+id/dictionaryTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:text="Dictionary"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/searchWord"
         android:layout_width="match_parent"
         android:layout_height="100dp"
+        android:layout_marginTop="100dp"
         android:hint="Search for a word..."
-        app:layout_constraintTop_toTopOf="parent"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toTopOf="@id/definition"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/definition"
-        android:textSize="20dp"
-        />
+        app:layout_constraintTop_toBottomOf="@id/dictionaryTextView" />
 
     <TextView
         android:id="@+id/definition"
@@ -26,11 +40,11 @@
         android:layout_height="200dp"
         android:hint="Definition"
         android:scrollbars="vertical"
-        app:layout_constraintTop_toBottomOf="@id/searchWord"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toTopOf="@id/searchButtonXML"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/searchButtonXML"
-        android:textSize="20dp"
+        app:layout_constraintTop_toBottomOf="@id/searchWord"
 
 
         />
@@ -40,10 +54,10 @@
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:text="Define"
+        android:textSize="20dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/definition"
-        android:textSize="20dp"
 
         />
 

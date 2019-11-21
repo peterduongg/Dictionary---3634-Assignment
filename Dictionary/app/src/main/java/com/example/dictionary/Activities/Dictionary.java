@@ -53,10 +53,6 @@ public class Dictionary extends AppCompatActivity {
             Toast.makeText(this, "Added to history", Toast.LENGTH_SHORT).show();
         }
 
-//        if (historyAppDatabase.historyDao().getHistory(word) > 0) {
-//            historyAppDatabase.historyDao().insert(history);
-//        }
-
 
         final String fields = "definitions";
         final String strictMatch = "false";

@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.dictionary">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,12 +12,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activities.Dictionary"></activity>
-        <activity android:name=".Activities.DictionaryHistory"></activity>
-        <activity android:name=".Activities.QuizMenuActivity"></activity>
-        <activity android:name=".Activities.QuizEasyQuestionsActivity"></activity>
-        <activity android:name=".Activities.QuizMediumQuestionsActivity"></activity>
-        <activity android:name=".Activities.QuizHardQuestionsActivity"></activity>
+        <activity android:name=".Activities.RandomWordGenerator"></activity>
+        <activity android:name=".Activities.Dictionary" />
+        <activity android:name=".Activities.DictionaryHistory" />
+        <activity android:name=".Activities.QuizMenuActivity" />
+        <activity android:name=".Activities.QuizEasyQuestionsActivity" />
+        <activity android:name=".Activities.QuizMediumQuestionsActivity" />
+        <activity android:name=".Activities.QuizHardQuestionsActivity" />
         <activity android:name=".Activities.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,7 +27,5 @@
             </intent-filter>
         </activity>
     </application>
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
 </manifest>
