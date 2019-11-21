@@ -10,6 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".Activities.Dictionary"></activity>
+        <activity android:name=".Activities.DictionaryHistory"></activity>
         <activity android:name=".Activities.QuizMenuActivity"></activity>
         <activity android:name=".Activities.QuizEasyQuestionsActivity"></activity>
         <activity android:name=".Activities.QuizMediumQuestionsActivity"></activity>

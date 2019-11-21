@@ -29,14 +29,14 @@
         app:layout_constraintTop_toBottomOf="@id/searchWord"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/search_button"
+        app:layout_constraintBottom_toTopOf="@id/searchButtonXML"
         android:textSize="20dp"
 
 
         />
 
     <Button
-        android:id="@+id/search_button"
+        android:id="@+id/searchButtonXML"
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:text="Define"

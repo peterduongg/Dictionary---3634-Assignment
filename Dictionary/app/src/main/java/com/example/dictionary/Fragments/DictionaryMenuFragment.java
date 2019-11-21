@@ -12,6 +12,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.example.dictionary.Activities.Dictionary;
+import com.example.dictionary.Activities.DictionaryHistory;
 import com.example.dictionary.Activities.MainActivity;
 import com.example.dictionary.R;
 
@@ -40,6 +41,15 @@ public class DictionaryMenuFragment extends Fragment {
                 startActivity(intent);
             }
         });
+
+        historyButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), DictionaryHistory.class);
+                startActivity(intent);
+            }
+        });
+
 
         return view;
     }

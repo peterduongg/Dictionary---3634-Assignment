@@ -7,16 +7,22 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.example.dictionary.DictionaryAdapter;
+import com.example.dictionary.Object.History;
 import com.example.dictionary.R;
 import com.example.dictionary.database.DictionaryRequest;
+import com.example.dictionary.database.HistoryAppDatabase;
+
+import java.util.List;
 
 public class Dictionary extends AppCompatActivity {
     String url;
     private Button defineButton;
     private TextView definitionTextView;
     private EditText enterWord;
-
+    HistoryAppDatabase historyAppDatabase;
 
 
     @Override
@@ -25,7 +31,8 @@ public class Dictionary extends AppCompatActivity {
         setContentView(R.layout.activity_dictionary);
         definitionTextView = findViewById(R.id.definition);
         enterWord = findViewById(R.id.searchWord);
-        defineButton = findViewById(R.id.search_button);
+        defineButton = findViewById(R.id.searchButtonXML);
+        final DictionaryAdapter dictionaryAdapter = new DictionaryAdapter(getApplicationContext());
         defineButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -34,9 +41,23 @@ public class Dictionary extends AppCompatActivity {
         });
 
     }
-    private String dictionaryEntries() {
+    public String dictionaryEntries() {
         final String language = "en-gb";
-        final String word = enterWord.getText().toString();
+        String word = enterWord.getText().toString();
+
+        historyAppDatabase = HistoryAppDatabase.getInstance(this);
+        History history = new History();
+        history.setWord(word);
+        if (history != null){
+            historyAppDatabase.historyDao().insert(history);
+            Toast.makeText(this, "Added to history", Toast.LENGTH_SHORT).show();
+        }
+
+//        if (historyAppDatabase.historyDao().getHistory(word) > 0) {
+//            historyAppDatabase.historyDao().insert(history);
+//        }
+
+
         final String fields = "definitions";
         final String strictMatch = "false";
         final String word_id = word.toLowerCase();
@@ -48,6 +69,7 @@ public class Dictionary extends AppCompatActivity {
         DictionaryRequest dr = new DictionaryRequest(this,definitionTextView);
         url = dictionaryEntries();
         dr.execute(url);
+
 
     }
 

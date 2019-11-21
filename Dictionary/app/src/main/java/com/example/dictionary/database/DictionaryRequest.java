@@ -10,6 +10,9 @@ import android.util.Log;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.dictionary.Activities.Dictionary;
+import com.example.dictionary.DictionaryAdapter;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -18,17 +21,21 @@ public class DictionaryRequest extends AsyncTask <String, Integer, String> {
 
     Context context;
     TextView definitionTextView;
+    HistoryAppDatabase historyAppDatabase;
+    DictionaryAdapter dictionaryAdapter;
+
 
     public DictionaryRequest(Context context, TextView DefinitionTextView){
         this.context = context;
         definitionTextView = DefinitionTextView;
+        historyAppDatabase = HistoryAppDatabase.getInstance(context);
+        dictionaryAdapter = new DictionaryAdapter(context);
     }
 
 
     @Override
     protected String doInBackground(String... params) {
 
-        //TODO: replace with your own app id and app key
         final String app_id = "2f8bd933";
         final String app_key = "6dee84ef268852627381f87561f98268";
         try {
@@ -78,11 +85,15 @@ public class DictionaryRequest extends AsyncTask <String, Integer, String> {
 
             def = d.getString(0);
             definitionTextView.setText(def);
+
+
             Toast.makeText(context, "Definition Found", Toast.LENGTH_SHORT).show();
+
 
         } catch (JSONException e) {
             definitionTextView.setText("*No Definition Found*");
             Toast.makeText(context, "There is no definition", Toast.LENGTH_SHORT).show();
+            int deleteItemNumber = dictionaryAdapter.getItemCount();
         }
         Log.v("Result of Dictionary", "onPostExecute" + result);
 
