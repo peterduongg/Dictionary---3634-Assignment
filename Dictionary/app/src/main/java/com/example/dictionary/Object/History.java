@@ -5,7 +5,7 @@ import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
 
-
+//Entity to store History data
 @Entity
 public class History {
 

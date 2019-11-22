@@ -36,6 +36,7 @@ public class YouTubeVideoFragment extends Fragment {
         LinearLayoutManager layoutManager = new LinearLayoutManager(view.getContext());
         ytRV.setLayoutManager(layoutManager);
 
+        //modularising the adding process of the youtube videos into the fragment
         addVideo("<iframe width=\"100%\" height=\"100%\" src=\"https://www.youtube.com/embed/gHIuB1Q0GBE\" frameborder=\"0\" allowfullscreen></iframe>");
         addVideo("<iframe width=\"100%\" height=\"100%\" src=\"https://www.youtube.com/embed/RUwhivWbWSY\" frameborder=\"0\" allowfullscreen></iframe>");
         addVideo("<iframe width=\"100%\" height=\"100%\" src=\"https://www.youtube.com/embed/fhwejpYSVMw\" frameborder=\"0\" allowfullscreen></iframe>");

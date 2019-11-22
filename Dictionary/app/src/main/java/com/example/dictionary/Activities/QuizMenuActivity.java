@@ -23,10 +23,9 @@ public class QuizMenuActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
+        //activity linking to the 3 quiz difficulties
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz_menu);
-
-
 
         buttonStartEasyQuiz = findViewById(R.id.easyQuizButton);
         buttonStartEasyQuiz.setOnClickListener(new View.OnClickListener() {
@@ -64,6 +63,7 @@ public class QuizMenuActivity extends AppCompatActivity {
 
     }
 
+    //calling relevant methods to start intents
     private void startQuizEasy() {
         Intent intent = new Intent(QuizMenuActivity.this, QuizEasyQuestionsActivity.class);
         startActivity(intent);

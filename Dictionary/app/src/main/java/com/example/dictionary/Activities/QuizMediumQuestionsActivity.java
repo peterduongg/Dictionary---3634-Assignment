@@ -21,7 +21,7 @@ import java.util.List;
 
 public class QuizMediumQuestionsActivity extends AppCompatActivity {
 
-
+    //see QuizEasyQuestionsActivity comments
     private TextView questionTextView;
     private TextView scoreTextView;
     private TextView questionCountTextView;

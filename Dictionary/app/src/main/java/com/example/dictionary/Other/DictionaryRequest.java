@@ -18,6 +18,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+// https://developer.oxforddictionaries.com/documentation?fbclid=IwAR2J3wemtcZhC0kkfTQpRwGm6NB0XyPTBAwolZ8NEWTid_ICrBbVOivTEyo#!/Entries/get_entries_source_lang_word_id
 public class DictionaryRequest extends AsyncTask <String, Integer, String> {
 
     Context context;
@@ -36,12 +37,15 @@ public class DictionaryRequest extends AsyncTask <String, Integer, String> {
 
     @Override
     protected String doInBackground(String... params) {
-
+        //defining API keys and ID
         final String app_id = "2f8bd933";
         final String app_key = "6dee84ef268852627381f87561f98268";
         try {
+            //taking in URL parameter
             URL url = new URL(params[0]);
+            //making connecting to secure HTTP(S)
             HttpsURLConnection urlConnection = (HttpsURLConnection) url.openConnection();
+            //setting previous variables into corresponding location to get response
             urlConnection.setRequestProperty("Accept","application/json");
             urlConnection.setRequestProperty("app_id",app_id);
             urlConnection.setRequestProperty("app_key",app_key);
@@ -70,6 +74,7 @@ public class DictionaryRequest extends AsyncTask <String, Integer, String> {
         super.onPostExecute(result);
         String def;
         try {
+
             JSONObject js = new JSONObject(result);
             JSONArray results = js.getJSONArray("results");
 
@@ -86,14 +91,17 @@ public class DictionaryRequest extends AsyncTask <String, Integer, String> {
             JSONArray d = de.getJSONArray("definitions");
 
             def = d.getString(0);
+            //place definition into text view
             definitionTextView.setText(def);
 
+            //calling the 'addHistory" method in DictionaryActivity to add word since response was successful
             DictionaryActivity.addHistory(context);
-
+            //feedback response
             Toast.makeText(context, "Definition Found! Added to history.", Toast.LENGTH_SHORT).show();
 
 
         } catch (JSONException e) {
+            //no response feedback
             definitionTextView.setText("*No Definition Found*");
             Toast.makeText(context, "There is no definition", Toast.LENGTH_SHORT).show();
 

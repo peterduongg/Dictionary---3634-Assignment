@@ -51,9 +51,10 @@ public class DictionaryAdapter extends RecyclerView.Adapter<DictionaryAdapter.Hi
 
     @Override
     public void onBindViewHolder(@NonNull final HistoryViewHolder holder, int position) {
+        //getting position of historical word
         final History dictionaryAtPosition = dictionaryToAdapt.get(position);
         holder.historyWord.setText(dictionaryAtPosition.getWord());
-
+        //removing selecting if button clicked
         holder.clearButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

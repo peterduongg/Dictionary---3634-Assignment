@@ -15,6 +15,7 @@ import androidx.annotation.Nullable;
 import java.util.ArrayList;
 import java.util.List;
 
+//references quiz tutorial https://www.youtube.com/watch?v=PiCZQg4mhBQ&t
 public class QuizEasyDatabaseHelper extends SQLiteOpenHelper {
 
     //database that will contain the quiz
@@ -34,7 +35,7 @@ public class QuizEasyDatabaseHelper extends SQLiteOpenHelper {
         //used to add values to database later
         this.db = db;
 
-        //sqlite code to create database (won't be called again unless the app is deleted)
+        //sqlite code to create database
         final String SQL_CREATE_QUESTIONS_TABLE = "CREATE TABLE " +
                 QuestionTable.TABLE_NAME + " ( " +
                 QuestionTable._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
@@ -52,8 +53,7 @@ public class QuizEasyDatabaseHelper extends SQLiteOpenHelper {
 
     }
 
-    //if we are to update the database, this update method is called
-    //it will drop any existing table and then call the 'oncreate' method again
+    //if database version is incremented, it will update existing FB
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("DROP TABLE IF EXISTS " + QuestionTable.TABLE_NAME);
@@ -62,6 +62,8 @@ public class QuizEasyDatabaseHelper extends SQLiteOpenHelper {
 
     //Defining the correct answer for the questions
     private void fillQuestionTable(){
+
+        //prefilling questions and answers
         Question q1 = new Question(
                 "Define the word Potato",
                 "a round white vegetable with a brown or red skin that grows underground as the root of a plant",
@@ -134,7 +136,7 @@ public class QuizEasyDatabaseHelper extends SQLiteOpenHelper {
 
     //
     private void addQuestion(Question question){
-        //
+        //placing each of the table elements into the quiz_questions.xml
         ContentValues cv = new ContentValues();
         cv.put(QuestionTable.COLUMN_QUESTION, question.getQuestion());
         cv.put(QuestionTable.COLUMN_OPTION1, question.getOption1());

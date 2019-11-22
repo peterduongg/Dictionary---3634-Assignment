@@ -28,6 +28,7 @@ public interface HistoryDao {
     @Delete
     public void delete(History history);
 
+    //getting all history to place into recyclerView
     @Query("SELECT * FROM History")
     public List<History> getAllHistory();
 

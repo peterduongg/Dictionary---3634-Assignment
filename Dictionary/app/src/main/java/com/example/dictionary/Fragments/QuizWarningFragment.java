@@ -29,7 +29,7 @@ public class QuizWarningFragment extends Fragment {
         final View view = inflater.inflate(R.layout.quiz_warning_fragment, container, false);
 
         continueButton = view.findViewById(R.id.buttonContinue);
-
+        //button leading to Quiz Menu
         continueButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

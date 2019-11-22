@@ -34,10 +34,21 @@ public class DictionaryMenuFragment extends Fragment {
         wordGeneratorButton = view.findViewById(R.id.word_generator_button);
         historyButton = view.findViewById(R.id.history_button);
 
+        //buttons leading into respective activities
         dictionaryButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), DictionaryActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
+
+        wordGeneratorButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), RandomWordGeneratorActivity.class);
                 startActivity(intent);
             }
         });
@@ -49,15 +60,6 @@ public class DictionaryMenuFragment extends Fragment {
                 startActivity(intent);
             }
         });
-
-        wordGeneratorButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), RandomWordGeneratorActivity.class);
-                startActivity(intent);
-            }
-        });
-
 
         return view;
     }

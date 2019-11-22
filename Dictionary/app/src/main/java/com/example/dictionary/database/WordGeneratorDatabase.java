@@ -54,7 +54,7 @@ public class WordGeneratorDatabase {
                 "Wanton",
                 "Yoke",
                 "Zephyr"};
-
+        //shuffling order of array to provide random words onClick
         List<String> randomWordsList = Arrays.asList(randomwords);
         Collections.shuffle(randomWordsList);
         randomwords = randomWordsList.toArray(new String[randomWordsList.size()]);

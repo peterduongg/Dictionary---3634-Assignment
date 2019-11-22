@@ -30,6 +30,7 @@ public class DictionaryActivity extends AppCompatActivity {
         definitionTextView = findViewById(R.id.definition);
         enterWord = findViewById(R.id.searchWord);
         defineButton = findViewById(R.id.searchButtonXML);
+        //making sure the user cant search for an empty string
         defineButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -44,25 +45,33 @@ public class DictionaryActivity extends AppCompatActivity {
     }
 
     public String dictionaryEntries() {
+        //
         final String language = "en-gb";
+        //getting string from enterWord field
         String word = enterWord.getText().toString();
 
         final String fields = "definitions";
         final String strictMatch = "false";
+        //in case of entering capital letters
         final String word_id = word.toLowerCase();
+        //compiling the url to get JSON
         return "https://od-api.oxforddictionaries.com:443/api/v2/entries/" + language + "/" + word_id + "?" + "fields=" + fields + "&strictMatch=" + strictMatch;
     }
 
     public static void addHistory(Context context) {
+        //getting instance of history database
         HistoryAppDatabase historyAppDatabase;
         historyAppDatabase = HistoryAppDatabase.getInstance(context);
         History history = new History();
         String word = enterWord.getText().toString();
+        //placing the word into a historu object
         history.setWord(word);
+        //adds the word to History database
         historyAppDatabase.historyDao().insert(history);
     }
 
     public void sendRequestOnClick(){
+        //set text to loading and then send a JSON request based on compiled URL
         definitionTextView.setText("Loading...");
         DictionaryRequest dr = new DictionaryRequest(this,definitionTextView);
         url = dictionaryEntries();

@@ -9,6 +9,7 @@ import androidx.room.RoomDatabase;
 
 import com.example.dictionary.Object.History;
 
+//database to store historical dictionary searches
 @Database(entities = {History.class}, version = 1, exportSchema = false)
 public abstract class HistoryAppDatabase extends RoomDatabase {
     public abstract HistoryDao historyDao();

@@ -17,11 +17,15 @@ import java.util.List;
 public class VideoAdapter extends RecyclerView.Adapter<VideoAdapter.VideoViewHolder> {
     List<YouTubeVideos> youTubeVideosList;
 
-    public VideoAdapter(){}
+    public VideoAdapter(){
+        //empty constructor
+    }
+
 
     public VideoAdapter(List<YouTubeVideos> youTubeVideosList){
         this.youTubeVideosList = youTubeVideosList;
     }
+
 
     @NonNull
     @Override

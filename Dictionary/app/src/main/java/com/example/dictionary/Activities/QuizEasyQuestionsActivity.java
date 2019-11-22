@@ -40,10 +40,12 @@ public class QuizEasyQuestionsActivity extends AppCompatActivity {
     private int score = 0;
     private boolean answered;
 
+    // references quiz tutorial https://www.youtube.com/watch?v=PiCZQg4mhBQ&t
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.quiz_questions);
+        //setting variables to elements with the quiz_questions XML
         questionTextView = findViewById(R.id.question_TextView);
         scoreTextView = findViewById(R.id.score_TextView);
         questionCountTextView = findViewById(R.id.question_CountTextView);
@@ -55,13 +57,18 @@ public class QuizEasyQuestionsActivity extends AppCompatActivity {
 
         textColorDefaultRb = rb1.getTextColors();
 
+        //Initiating the easydatabase helper
         QuizEasyDatabaseHelper dbHelper = new QuizEasyDatabaseHelper(this);
+        //taking all the questions from the database
         questionList = dbHelper.getAllQuestions();
         questionCountTotal = questionList.size();
+        //shuffles the order of the questions so it's not always the same
         Collections.shuffle(questionList);
 
+        //method to move on to next question
         showNextQuestion();
 
+        //checking answer and making sure somethign selected
         confirmButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -79,11 +86,14 @@ public class QuizEasyQuestionsActivity extends AppCompatActivity {
     }
 
     private void showNextQuestion() {
+        //returning all buttons to original text colour
         rb1.setTextColor(textColorDefaultRb);
         rb2.setTextColor(textColorDefaultRb);
         rb3.setTextColor(textColorDefaultRb);
+        //clearing radio selection
         radioGroup.clearCheck();
 
+        // condition if questions remain, continue pulling questions
         if (questionCounter < questionCountTotal) {
             currentQuestion = questionList.get(questionCounter);
 
@@ -97,16 +107,19 @@ public class QuizEasyQuestionsActivity extends AppCompatActivity {
             answered = false;
             confirmButton.setText("Confirm");
         } else {
+            //finish quiz if no more questions
             finishQuiz();
         }
     }
 
     private void checkAnswer() {
         answered = true;
+        // method to check for correct answer
 
         RadioButton rbSelected = findViewById(radioGroup.getCheckedRadioButtonId());
         int answerNumber = radioGroup.indexOfChild(rbSelected) + 1;
 
+        //incrementing score if selected correctly
         if (answerNumber == currentQuestion.getCorrectAnswer()) {
             score++;
             scoreTextView.setText("Score: " + score);
@@ -116,10 +129,12 @@ public class QuizEasyQuestionsActivity extends AppCompatActivity {
     }
 
     private void showSolution() {
+        //setting all to red
         rb1.setTextColor(Color.RED);
         rb2.setTextColor(Color.RED);
         rb3.setTextColor(Color.RED);
 
+        //turning the correct answer green
         switch (currentQuestion.getCorrectAnswer()) {
             case 1:
                 rb1.setTextColor(Color.GREEN);
