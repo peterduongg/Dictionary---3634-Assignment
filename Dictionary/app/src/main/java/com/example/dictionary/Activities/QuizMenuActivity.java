@@ -14,12 +14,7 @@ public class QuizMenuActivity extends AppCompatActivity {
     Button buttonStartMediumQuiz;
     Button buttonStartHardQuiz;
     Button backButton;
-//    private static final int REQUEST_CODE_QUIZ = 1;
-//
-//    public static final String SHARED_PREFERENCES = "sharedPreferences";
-//    public static final String HIGHSCORE_KEY = "highScoreKey";
-//    private TextView highScoreTextView;
-//    private int highScore;
+
 
     public QuizMenuActivity(){
         //empty constructor to refer to
@@ -31,8 +26,7 @@ public class QuizMenuActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz_menu);
 
-//        highScoreTextView = findViewById(R.id.mediumScoreText);
-//        loadHighScore();
+
 
         buttonStartEasyQuiz = findViewById(R.id.easyQuizButton);
         buttonStartEasyQuiz.setOnClickListener(new View.OnClickListener() {
@@ -78,7 +72,6 @@ public class QuizMenuActivity extends AppCompatActivity {
 
     private void startQuizMedium() {
         Intent intent = new Intent(QuizMenuActivity.this, QuizMediumQuestionsActivity.class);
-//        startActivityForResult(intent, REQUEST_CODE_QUIZ);
         startActivity(intent);
 
     }
@@ -94,34 +87,6 @@ public class QuizMenuActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-//    @Override
-//    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-//        super.onActivityResult(requestCode, resultCode, data);
-//
-//        if (requestCode == REQUEST_CODE_QUIZ){
-//            if(requestCode == RESULT_OK){
-//                int score = data.getIntExtra(QuizMediumQuestionsActivity.SCORE_RETURN, 0);
-//                if (score > highScore){
-//                    updateHighScore(score);
-//                }
-//            }
-//        }
-//    }
 
-//    private void updateHighScore(int newHighScore) {
-//        highScore = newHighScore;
-//        highScoreTextView.setText("Highscore:" + highScore);
-//        SharedPreferences pref = getSharedPreferences(SHARED_PREFERENCES, MODE_PRIVATE);
-//        SharedPreferences.Editor editor = pref.edit();
-//        editor.putInt(HIGHSCORE_KEY, highScore);
-//        editor.apply();
-//    }
-
-//    private void loadHighScore(){
-//        SharedPreferences pref = getSharedPreferences(SHARED_PREFERENCES, MODE_PRIVATE);
-//        highScore = pref.getInt(HIGHSCORE_KEY, 0);
-//        highScoreTextView.setText("Highscore: " + highScore);
-//    }
-//
 
 }

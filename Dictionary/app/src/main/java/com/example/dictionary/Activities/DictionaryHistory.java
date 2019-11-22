@@ -1,22 +1,18 @@
 package com.example.dictionary.Activities;
 
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.dictionary.DictionaryAdapter;
-import com.example.dictionary.Object.HistoryDao;
+import com.example.dictionary.Other.DictionaryAdapter;
 import com.example.dictionary.R;
 import com.example.dictionary.database.HistoryAppDatabase;
 
 public class DictionaryHistory extends AppCompatActivity {
     public RecyclerView historyRV;
     HistoryAppDatabase historyAppDatabase;
-//    Button clearDatabase;
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,8 +21,6 @@ public class DictionaryHistory extends AppCompatActivity {
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         historyRV.setLayoutManager(layoutManager);
         historyAppDatabase = historyAppDatabase.getInstance(this);
-        //clearDatabase = findViewById(R.id.buttonClearHistory);
-
 
 
         final DictionaryAdapter dictionaryAdapter = new DictionaryAdapter(this);
@@ -34,8 +28,6 @@ public class DictionaryHistory extends AppCompatActivity {
 
         dictionaryAdapter.setData(db.historyDao().getAllHistory());
         historyRV.setAdapter(dictionaryAdapter);
-
-
 
     }
 }

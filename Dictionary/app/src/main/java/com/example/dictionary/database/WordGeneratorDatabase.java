@@ -3,11 +3,10 @@ package com.example.dictionary.database;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
-import java.util.Random;
 
 public class WordGeneratorDatabase {
 
-    public static String getRandomWords() {
+    public static String[] getRandomWords() {
         String[] randomwords = {"Abject",
                 "Aberation",
                 "Blandishment",
@@ -56,9 +55,10 @@ public class WordGeneratorDatabase {
                 "Yoke",
                 "Zephyr"};
 
-        Random random = new Random();
-        int i = random.nextInt(randomwords.length);
-        return randomwords[i];
+        List<String> randomWordsList = Arrays.asList(randomwords);
+        Collections.shuffle(randomWordsList);
+        randomwords = randomWordsList.toArray(new String[randomWordsList.size()]);
+        return randomwords;
 
 
     }

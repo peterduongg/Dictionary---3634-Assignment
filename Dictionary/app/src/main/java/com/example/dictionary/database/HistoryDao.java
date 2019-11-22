@@ -1,4 +1,4 @@
-package com.example.dictionary.Object;
+package com.example.dictionary.database;
 
 import android.widget.TextView;
 import android.widget.Toast;
@@ -9,6 +9,8 @@ import androidx.room.Insert;
 import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
 import androidx.room.Update;
+
+import com.example.dictionary.Object.History;
 
 import java.util.List;
 @Dao
@@ -29,15 +31,6 @@ public interface HistoryDao {
     @Query("SELECT * FROM History")
     public List<History> getAllHistory();
 
-//    @Query ("SELECT * FROM History limit 1")
-//    public History selectDelete();
 
-
-
-//    @Query("SELECT COUNT(word) FROM History WHERE word = :word")
-//    public History getHistory (String word);
-
-//    @Query("SELECT count(1) FROM History WHERE id = :id")
-//    public int getHistoryId(String id);
 
 }

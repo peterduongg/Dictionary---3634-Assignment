@@ -21,7 +21,6 @@ import java.util.List;
 
 public class QuizHardQuestionsActivity extends AppCompatActivity {
 
-//    public static final String SCORE_RETURN = "Score return";
 
     private TextView questionTextView;
     private TextView scoreTextView;
@@ -147,7 +146,6 @@ public class QuizHardQuestionsActivity extends AppCompatActivity {
     }
 
     private void finishQuiz() {
-
         finish();
     }
 }

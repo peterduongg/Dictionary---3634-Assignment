@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/colorPink">
+    android:background="@color/colorFBGrey">
 
     <TextView
         android:id="@+id/historyWordTextView"
@@ -26,6 +26,7 @@
         android:layout_marginEnd="30dp"
         android:layout_marginRight="30dp"
         android:text="Remove"
+        android:background="@color/colorWhite"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

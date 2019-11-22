@@ -21,7 +21,6 @@ import java.util.List;
 
 public class QuizMediumQuestionsActivity extends AppCompatActivity {
 
-//    public static final String SCORE_RETURN = "Score return";
 
     private TextView questionTextView;
     private TextView scoreTextView;
@@ -147,10 +146,7 @@ public class QuizMediumQuestionsActivity extends AppCompatActivity {
     }
 
     private void finishQuiz() {
-        //returning score result to Quiz menu screen.
-//        Intent resultIntent = new Intent();
-//        resultIntent.putExtra(SCORE_RETURN, score);
-//        setResult(RESULT_OK);
+
         finish();
     }
 }

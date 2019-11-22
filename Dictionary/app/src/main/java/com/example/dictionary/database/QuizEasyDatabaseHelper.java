@@ -124,7 +124,7 @@ public class QuizEasyDatabaseHelper extends SQLiteOpenHelper {
                 2);
         addQuestion(q9);
         Question q10 = new Question(
-                "Define the word Dictionary",
+                "Define the word DictionaryActivity",
                 "a book that gives a list of the words of a language in alphabetical order and explains what they mean, or gives a word for them in a foreign language",
                 "an explanation of the meaning of a word or phrase, the act of stating the meanings of words and phrases",
                 "a series of names, items, figures, etc., especially when they are written or printed",

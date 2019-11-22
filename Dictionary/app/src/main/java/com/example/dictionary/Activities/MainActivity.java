@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity{
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
 
-                //if clicked on Dictionary bar change to it
+                //if clicked on DictionaryActivity bar change to it
                 if (menuItem.getItemId() == R.id.nav_Dictionary) {
                     //change below to your fragment
                     Fragment fragment = new DictionaryMenuFragment();
@@ -55,6 +55,8 @@ public class MainActivity extends AppCompatActivity{
         });
 
     }
+
+    //method that takes variables to swap to corresponding fragment
     private void swapFragment(Fragment fragment) {
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();

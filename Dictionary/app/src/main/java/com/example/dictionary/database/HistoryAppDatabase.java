@@ -8,7 +8,6 @@ import androidx.room.RoomDatabase;
 
 
 import com.example.dictionary.Object.History;
-import com.example.dictionary.Object.HistoryDao;
 
 @Database(entities = {History.class}, version = 1, exportSchema = false)
 public abstract class HistoryAppDatabase extends RoomDatabase {

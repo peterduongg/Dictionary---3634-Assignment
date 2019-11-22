@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPink"
+    android:background="@color/colorFBGrey"
     android:orientation="vertical">
 
     <TextView
@@ -28,6 +28,7 @@
         android:layout_marginBottom="30dp"
         android:text="Dictionary"
         android:textSize="20dp"
+        android:background="@color/colorWhite"
         app:layout_constraintBottom_toTopOf="@+id/word_generator_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -38,6 +39,7 @@
         android:layout_height="wrap_content"
         android:text="Word Generator"
         android:textSize="20dp"
+        android:background="@color/colorWhite"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -51,6 +53,7 @@
         android:layout_marginTop="30dp"
         android:text="History"
         android:textSize="20dp"
+        android:background="@color/colorWhite"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/word_generator_button" />

@@ -1,4 +1,4 @@
-package com.example.dictionary.Activities;
+package com.example.dictionary.Other;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,6 +9,7 @@ import android.webkit.WebView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.dictionary.Object.YouTubeVideos;
 import com.example.dictionary.R;
 
 import java.util.List;
@@ -46,7 +47,7 @@ public class VideoAdapter extends RecyclerView.Adapter<VideoAdapter.VideoViewHol
         public VideoViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            videoWeb = (WebView) itemView.findViewById(R.id.videoWebView);
+            videoWeb = itemView.findViewById(R.id.videoWebView);
 
             videoWeb.getSettings().setJavaScriptEnabled(true);
             videoWeb.setWebChromeClient(new WebChromeClient());

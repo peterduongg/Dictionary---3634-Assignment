@@ -1,4 +1,4 @@
-package com.example.dictionary.Activities;
+package com.example.dictionary.Object;
 
 public class YouTubeVideos {
 

@@ -13,9 +13,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activities.youtubeActivity"></activity>
-        <activity android:name=".Activities.RandomWordGenerator"></activity>
-        <activity android:name=".Activities.Dictionary" />
+        <activity android:name=".Activities.RandomWordGeneratorActivity"></activity>
+        <activity android:name=".Activities.DictionaryActivity" />
         <activity android:name=".Activities.DictionaryHistory" />
         <activity android:name=".Activities.QuizMenuActivity" />
         <activity android:name=".Activities.QuizEasyQuestionsActivity" />

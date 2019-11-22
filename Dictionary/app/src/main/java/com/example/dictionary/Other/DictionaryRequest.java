@@ -1,18 +1,18 @@
-package com.example.dictionary.database;
+package com.example.dictionary.Other;
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.os.AsyncTask;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.URL;
 import javax.net.ssl.HttpsURLConnection;
-import android.os.AsyncTask;
+
 import android.util.Log;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.dictionary.Activities.Dictionary;
-import com.example.dictionary.DictionaryAdapter;
-import com.example.dictionary.Object.HistoryDao;
+import com.example.dictionary.Activities.DictionaryActivity;
+import com.example.dictionary.database.HistoryAppDatabase;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -64,6 +64,7 @@ public class DictionaryRequest extends AsyncTask <String, Integer, String> {
         }
     }
 
+    @SuppressLint("LongLogTag")
     @Override
     protected void onPostExecute(String result) {
         super.onPostExecute(result);
@@ -87,17 +88,17 @@ public class DictionaryRequest extends AsyncTask <String, Integer, String> {
             def = d.getString(0);
             definitionTextView.setText(def);
 
+            DictionaryActivity.addHistory(context);
 
-            Toast.makeText(context, "Definition Found", Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, "Definition Found! Added to history.", Toast.LENGTH_SHORT).show();
 
 
         } catch (JSONException e) {
             definitionTextView.setText("*No Definition Found*");
             Toast.makeText(context, "There is no definition", Toast.LENGTH_SHORT).show();
-//            historyAppDatabase.historyDao().delete();
-            //int deleteItemNumber = dictionaryAdapter.getItemCount();
+
         }
-        Log.v("Result of Dictionary", "onPostExecute" + result);
+        Log.v("Result of DictionaryActivity", "onPostExecute" + result);
 
     }
 }

@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/colorPink"
+    android:background="@color/colorFBGrey"
     android:orientation="vertical">
 
     <TextView
@@ -16,11 +16,6 @@
         android:textSize="30dp"
         android:textStyle="bold" />
 
-<!--    <Button-->
-<!--        android:id="@+id/buttonClearHistory"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:text="Clear History" />-->
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/dictionaryHistory_rv"

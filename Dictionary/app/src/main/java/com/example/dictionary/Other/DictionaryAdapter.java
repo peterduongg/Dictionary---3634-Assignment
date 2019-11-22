@@ -1,4 +1,4 @@
-package com.example.dictionary;
+package com.example.dictionary.Other;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 
 import com.example.dictionary.Object.History;
+import com.example.dictionary.R;
 import com.example.dictionary.database.HistoryAppDatabase;
 
 import java.util.List;

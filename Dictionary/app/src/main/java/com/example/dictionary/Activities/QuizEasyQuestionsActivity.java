@@ -21,8 +21,6 @@ import java.util.List;
 
 public class QuizEasyQuestionsActivity extends AppCompatActivity {
 
-//    public static final String SCORE_RETURN = "Score return";
-
     private TextView questionTextView;
     private TextView scoreTextView;
     private TextView questionCountTextView;
@@ -46,8 +44,6 @@ public class QuizEasyQuestionsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.quiz_questions);
-
-
         questionTextView = findViewById(R.id.question_TextView);
         scoreTextView = findViewById(R.id.score_TextView);
         questionCountTextView = findViewById(R.id.question_CountTextView);

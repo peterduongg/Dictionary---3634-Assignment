@@ -9,9 +9,8 @@ import android.widget.TextView;
 import com.example.dictionary.R;
 import com.example.dictionary.database.WordGeneratorDatabase;
 
-public class RandomWordGenerator extends AppCompatActivity {
+public class RandomWordGeneratorActivity extends AppCompatActivity {
 
-    private WordGeneratorDatabase wordGeneratorDatabase = new WordGeneratorDatabase();
     TextView wordTextView;
     TextView generateButton;
 
@@ -25,8 +24,8 @@ public class RandomWordGenerator extends AppCompatActivity {
         generateButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String displayWord = WordGeneratorDatabase.getRandomWords();
-                wordTextView.setText(displayWord);
+                String[] displayWord = WordGeneratorDatabase.getRandomWords();
+                wordTextView.setText(displayWord[0]);
             }
         });
 
